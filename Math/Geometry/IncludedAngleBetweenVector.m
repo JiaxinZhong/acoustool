@@ -1,0 +1,9 @@
+
+function inc_angle = IncludedAngleBetweenVector(p1, p2)
+
+inc_angle = real(acos( ...
+    cos(p1.theta) .* cos(p2.theta) ...
+    + sin(p1.theta) .* sin(p2.theta) ...
+    .* cos(p1.phi - p2.phi)));
+
+end
