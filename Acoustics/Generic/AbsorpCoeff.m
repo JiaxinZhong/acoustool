@@ -47,7 +47,7 @@ function [alpha_Np, alpha_dB] = AbsorpCoeff(freq, varargin)
 	parse(p, varargin{:});
 	ip = p.Results;
 
-	if ~isCompatibleSize(freq, ip.temperature, ip.pressure, ip.humidity)
+	if ~IsCompatibleSize(freq, ip.temperature, ip.pressure, ip.humidity)
 		error('All inputs must be compatible in sizes!\n')
 	end
     
