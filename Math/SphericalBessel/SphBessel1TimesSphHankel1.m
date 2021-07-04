@@ -50,9 +50,9 @@ function res = SphBessel1TimesSphHankel1(max_order, zj, zh, varargin)
 
         case 'robust'
             n = (0:max_order).';
-            j_bar = SphericalBesselJNorm(n, zj_row);
-            h_bar = SphericalHankelNorm(n, zh_row);
-            jh = SphBessel1(n, zj_row) .* SphericalHankel(n, zh_row);
+            j_bar = SphBessel1Norm(n, zj_row);
+            h_bar = SphHankel1Norm(n, zh_row);
+            jh = SphBessel1(n, zj_row) .* SphHankel1(n, zh_row);
             res = 1 ./ (1i * (2*n+1) .* zh_row) ...
                 .* exp(n .* log(zj_row ./ zh_row) + log(j_bar .* h_bar));
             
