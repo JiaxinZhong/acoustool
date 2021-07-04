@@ -56,6 +56,8 @@ function res = SphHankel1DDivSphHankel1(N, zd, z0, varargin)
                 - log( zd_row .* h_bar_z0(1:end-1,:)));
             res0 = (n ./ zd_row .* h_zd(1:end-1,:) - h_zd(2:end,:)) ...
                 ./ h_z0(1:end-1,:);
+            h_bar_z0 = h_bar_z0(1:end-1,:);
+            h_bar_zd = h_bar_zd(1:end-1,:);
             res(isnan(h_bar_z0) | isinf(h_bar_z0) | isnan(h_bar_zd) | isinf(h_bar_z0)) ...
                 = res0(isnan(h_bar_z0) | isinf(h_bar_z0) | isnan(h_bar_zd) | isinf(h_bar_z0));
 
